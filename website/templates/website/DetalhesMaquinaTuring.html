@@ -1,0 +1,13 @@
+{% extends 'website/layout.html' %}
+
+{% block main %}
+    <h3>Detalhes da Maquina de turing:</h3>
+    <p>Alfabeto:  {{ maquinaturing.Alfabeto }}</p>
+    <p>Estados:  {{ maquinaturing.Estados }}</p>
+    <p>Estado inicial:  {{ maquinaturing.EstadoInicial }}</p>
+    <p>Estados de aceitação:  {{ maquinaturing.EstadosDeAceitacao }}</p>
+    <p>Dicionário de transição:  {{ maquinaturing.DicionarioTransicao }}</p>
+    <p>Descrição:  {{ maquinaturing.Descricao }}</p>
+    <a href="{% url 'website:MostraMaquinasTuring' %}" role="button" class="btn btn-warning">Voltar</a>
+    {% load static %}
+{% endblock %}

@@ -1,0 +1,26 @@
+digraph "Aceita todas as sequencias com mais zeros do que uns" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	D
+	B
+	A
+	C
+	E [shape=doublecircle]
+	Start -> A
+	A -> A [label=XXR]
+	A -> B [label="0XR"]
+	A -> D [label="1XR"]
+	B -> B [label=XXR]
+	B -> B [label="00R"]
+	B -> E [label="ΔΔS"]
+	B -> C [label="1XL"]
+	C -> C [label="11L"]
+	C -> C [label="00L"]
+	C -> C [label=XXL]
+	C -> A [label="ΔΔR"]
+	D -> D [label=XXR]
+	D -> D [label="11R"]
+	D -> C [label="0XL"]
+}

@@ -1,0 +1,22 @@
+digraph "Aceita todas as sequencias iniciadas e terminadas com o mesmo numeroa" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	C
+	A
+	E
+	B [shape=doublecircle]
+	D [shape=doublecircle]
+	Start -> A
+	A -> B [label=0]
+	A -> D [label=1]
+	B -> B [label=0]
+	B -> C [label=1]
+	C -> B [label=0]
+	C -> C [label=1]
+	D -> E [label=0]
+	D -> D [label=1]
+	E -> D [label=1]
+	E -> E [label=0]
+}

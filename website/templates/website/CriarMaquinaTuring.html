@@ -1,0 +1,13 @@
+{% extends 'website/layout.html' %}
+
+{% block main %}
+    <h3>Criar Maquina Turing</h3>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Gravar" class="btn btn-success">
+        <a href="{% url 'website:EscolhaCriacaoMaquinaTuring' %}" role="button" class="btn btn-warning">Cancelar</a>
+    </form>
+
+{% endblock %}

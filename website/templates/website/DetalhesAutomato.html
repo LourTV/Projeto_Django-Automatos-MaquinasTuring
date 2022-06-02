@@ -1,0 +1,13 @@
+{% extends 'website/layout.html' %}
+
+{% block main %}
+    <h3>Detalhes do autómato:</h3>
+    <p>Alfabeto:  {{ automato.Alfabeto }}</p>
+    <p>Estados:  {{ automato.Estados }}</p>
+    <p>Estado inicial:  {{ automato.EstadoInicial }}</p>
+    <p>Estados de aceitação:  {{ automato.EstadosDeAceitacao }}</p>
+    <p>Dicionário de transição:  {{ automato.DicionarioTransicao }}</p>
+    <p>Descrição:  {{ automato.Descricao }}</p>
+    <a href="{% url 'website:MostraAutomatos' %}" role="button" class="btn btn-warning">Voltar</a>
+    {% load static %}
+{% endblock %}

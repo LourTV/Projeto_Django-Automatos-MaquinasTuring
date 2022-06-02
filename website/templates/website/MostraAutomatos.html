@@ -1,0 +1,38 @@
+{% extends 'website/layout.html' %}
+
+{% block main %}
+    <h3>Automatos(AFDs)</h3>
+    <a href ="{% url 'website:EscolhaCriacaoAutomato' %}" class="btn btn-success btn-block" style ="margin-top: 30px;">+ Novo Autómato </a>
+     <div class = "container">
+        <div class="row" style = "margin-top: 30px;">
+            <div class="col-sm-6 border-bottom border-top">
+                <h5>Digrama de Estados</h5>
+            </div>
+            <div class="col-sm-6 border-bottom border-top">
+                <h5>Descrição</h5>
+            </div>
+        </div>
+    </div>
+    {% for automato in website %}
+<div class ="container">
+            <div class ="row">
+                <div class ="col-sm-6 border-bottom">
+                 {% load static %} <img src="{% static "website/imagens/" %}{{ automato.Descricao }}.svg" alt="home" width="250" height="250" />
+                </div>
+                <div class ="col-sm-6 border-bottom">
+                    <span class ="desc" align="center">
+                        {{ automato.Descricao }}
+                    </span>
+                    <p>
+            <a href="{% url 'website:DetalhesAutomato' automato.id %}" class="btn btn-info btn-sm" style="" >Detalhes</a>
+            <a href="{% url 'website:TestarAutomato' automato.id %}" class="btn btn-success btn-sm"  >Testar</a>
+            <a href="{% url 'website:EditarAutomato' automato.id %}" class="btn btn-warning btn-sm" >Editar</a>
+            <a href="{% url 'website:ApagaAutomato' automato.id %}" role="button" class="btn btn-danger btn-sm" >Apagar</a>
+</p>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+
+{% endblock %}

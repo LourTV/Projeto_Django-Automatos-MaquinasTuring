@@ -1,0 +1,30 @@
+/* base.css */
+
+footer {
+   position: fixed;
+   bottom: 30px;
+   width: 100%;
+   text-align: center;
+}
+body {
+    background-color: white;
+}
+body > article {
+    max-width: 800px;
+    margin: auto;
+}
+main{
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+}
+
+main p{
+    text-align: left;
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    color:black;
+    border-radius: 3px;
+}

@@ -1,0 +1,10 @@
+{% extends 'website/layout.html' %}
+
+{% block main %}
+    <h3>Como deseja criar a sua máquina de turing?</h3>
+    <a href ="{% url 'website:CriarMaquinaTuring'%}" class="btn btn-primary" style ="margin-top: 30px;">Formulário </a>
+    <a href ="{% url 'website:MaquinaTuringUpload'%}" class="btn btn-primary" style ="margin-top: 30px;">Upload JSON </a>
+    <p></p>
+    <a href="{% url 'website:MostraMaquinasTuring' %}" role="button" class="btn btn-warning">Voltar</a>
+    {% load static %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    		<title>Website</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	</head>
+	<body>
+    <header class="jumbotron text-center">
+        <h1>
+            Teoria da computação
+        </h1>
+        <p>Projeto</p>
+        <nav>
+        <a href="{% url 'website:Introducao' %}"  type = "button" class="btn btn-info" style="background-color: orange;">Introdução</a>
+        <a href="{% url 'website:MostraAutomatos' %}"  type = "button" class="btn btn-info" style="background-color: orange;">Automatos</a>
+        <a href="{% url 'website:MostraMaquinasTuring' %}"  type = "button" class="btn btn-info" style="background-color: orange;">Máquinas de Turing</a>
+        </nav>
+
+    </header>
+	    <article>
+		 <main class = "container text-center">
+	    {% block main %}
+	    {% endblock main %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+        </main>
+		<aside class="col-sm-6">
+        </aside>
+	    </article>
+	</body>
+</html>

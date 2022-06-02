@@ -1,0 +1,13 @@
+{% extends 'website/layout.html' %}
+
+{% block main %}
+    <form action="{% url 'website:TestarAutomato' automato_id %}" method="post">
+    {% csrf_token %}
+    <label for="Sequencia">Insira a sequência que deseja testar </label>
+    <input id="Sequencia" type="text" name="Sequencia" value="{{ sequencia_atual }}">
+    <input type="submit" value="Testar" class = "btn btn-success">
+    <a href="{% url 'website:MostraAutomatos' %}" role="button" class="btn btn-warning">Cancelar</a>
+    <p>{{ Automato.Estados }}</p>
+    {{ Aceite }}
+    </form>
+{% endblock %}

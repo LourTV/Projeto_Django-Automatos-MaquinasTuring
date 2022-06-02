@@ -1,0 +1,38 @@
+{% extends 'website/layout.html' %}
+
+{% block main %}
+    <h3>Máquinas de Turing</h3>
+    <a href ="{% url 'website:EscolhaCriacaoMaquinaTuring' %}" class="btn btn-success btn-block" style ="margin-top: 30px;">+ Nova Máquina turing </a>
+    <div class = "container">
+        <div class="row" style = "margin-top: 30px;">
+            <div class="col-sm-6 border-bottom border-top">
+                <h5>Digrama de Estados</h5>
+            </div>
+            <div class="col-sm-6 border-bottom border-top">
+                <h5>Descrição</h5>
+            </div>
+        </div>
+    </div>
+    {% for maquinaturing in website %}
+        <div class ="container">
+            <div class ="row">
+                <div class ="col-sm-6 border-bottom">
+                 {% load static %} <img src="{% static "website/imagens/MaquinasTuring/" %}{{ maquinaturing.Descricao }}.svg" alt="home" width="250" height="250" />
+                </div>
+                <div class ="col-sm-6 border-bottom">
+                    <span class ="desc" align="center">
+                        {{ maquinaturing.Descricao }}
+                    </span>
+                    <p>
+            <a href="{% url 'website:DetalhesMaquinaTuring' maquinaturing.id %}" class="btn btn-info btn-sm" >Detalhes</a>
+            <a href="{% url 'website:TestarMaquinaTuring' maquinaturing.id %}" class="btn btn-success btn-sm"  >Testar</a>
+            <a href="{% url 'website:EditarMaquinaTuring' maquinaturing.id %}" class="btn btn-warning btn-sm"  >Editar</a>
+            <a href="{% url 'website:ApagaMaquinaTuring' maquinaturing.id %}" role="button" class="btn btn-danger btn-sm">Apagar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% endblock %}

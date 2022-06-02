@@ -1,0 +1,12 @@
+digraph "Elimina a sequência inteira" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	A
+	B [shape=doublecircle]
+	Start -> A
+	A -> A [label="0ΔR"]
+	A -> A [label="1ΔR"]
+	A -> B [label="ΔΔS"]
+}

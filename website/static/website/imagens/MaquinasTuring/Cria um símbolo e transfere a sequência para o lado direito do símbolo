@@ -1,0 +1,40 @@
+digraph "Cria um símbolo e transfere a sequência para o lado direito do símbolo" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	G
+	C
+	D
+	B
+	A
+	F
+	I
+	J [shape=doublecircle]
+	Start -> A
+	A -> A [label="00R"]
+	A -> A [label="11R"]
+	A -> B [label="Δ#L"]
+	B -> B [label="11L"]
+	B -> B [label="00L"]
+	B -> C [label="ΔΔR"]
+	C -> D [label="1ΔR"]
+	C -> G [label="0ΔR"]
+	C -> J [label="##S"]
+	D -> D [label="00R"]
+	D -> D [label="11R"]
+	D -> D [label="##R"]
+	D -> F [label="Δ1L"]
+	F -> F [label="11L"]
+	F -> F [label="00L"]
+	F -> F [label="##L"]
+	F -> C [label="ΔΔR"]
+	G -> G [label="00R"]
+	G -> G [label="11R"]
+	G -> G [label="##R"]
+	G -> I [label="Δ0L"]
+	I -> I [label="11L"]
+	I -> I [label="00L"]
+	I -> I [label="##L"]
+	I -> C [label="ΔΔR"]
+}

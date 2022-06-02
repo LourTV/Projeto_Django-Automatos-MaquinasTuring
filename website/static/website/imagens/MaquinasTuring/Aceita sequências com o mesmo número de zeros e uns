@@ -1,0 +1,26 @@
+digraph "Aceita sequências com o mesmo número de zeros e uns" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	A
+	D
+	C
+	B
+	E [shape=doublecircle]
+	Start -> A
+	A -> A [label=XXR]
+	A -> B [label="1XR"]
+	A -> D [label="0XR"]
+	A -> E [label="ΔΔS"]
+	B -> B [label="11R"]
+	B -> B [label=XXR]
+	B -> C [label="0XL"]
+	C -> C [label="11L"]
+	C -> C [label="00L"]
+	C -> C [label=XXL]
+	C -> A [label="ΔΔR"]
+	D -> D [label="00R"]
+	D -> D [label=XXR]
+	D -> C [label="1XL"]
+}
